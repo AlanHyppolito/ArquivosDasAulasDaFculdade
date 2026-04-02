@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_nota1" placeholder="nota 1">
+    <input type="text" id="ipt_nota2" placeholder="nota 2">
+    <button onclick="msg()">Verificar situação</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let nota1 = +ipt_nota1.value
+        let nota2 = +ipt_nota2.value
+        let media = (nota1 + nota2)/2
+        if (media>= 6){
+            div_msg.innerHTML = "Parabéns, aprovado!"
+        }
+        else{
+           div_msg.innerHTML = "Tente outra vez..."
+        }
+    }
+</script>

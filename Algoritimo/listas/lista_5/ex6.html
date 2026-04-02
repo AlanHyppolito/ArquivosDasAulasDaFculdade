@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_time">
+    <button onclick="msg()">Fale sobre esse time</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let time= ipt_time.value
+        if(time=='São Paulo'){
+
+            div_msg.innerHTML= '<span style="background-color: black; color: red"> Salve o Tricolor paulista'
+        }
+        else if(time=='Palmeiras'){
+             div_msg.innerHTML= '<span style="background-color: green; color: white"> Salve o alviverde imponente'
+        }
+        else if(time== 'Santos' ){
+            div_msg.innerHTML= '<span style="background-color: white; color: black"> Agora quem dá a bola é o Santos'
+        }
+        else if(time==' Corinthians' ){
+             div_msg.innerHTML= '<span style="background-color: black ; color: white ">Salve o Corinthians'
+        }
+        else{
+             div_msg.innerHTML= 'Escolha eum time entre:<br> Santos <br> São Paulo <br> Corinthians <br> Palmeiras'
+        }
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="itp_valor_pizza" placeholder="qual o valor da pizza" >
+    <input type="text" id="qtd_amigos" placeholder="quantos amigos vão">
+    <button onclick="msg()">Rola pizza?</button>
+    <p id="p_pizza"></p>
+    <p id="deu_ruim"></p>
+
+</body>
+</html>
+<script>
+    function msg(){
+    let pizza = +itp_valor_pizza.value
+    let amigos= +qtd_amigos.value
+    let valor = pizza/amigos
+        p_pizza.innerHTML= `Cada amigo vai pagar R$ ${valor} pela pizza.`
+        if (valor>20){
+            deu_ruim.innerHTML= "Deu ruim, Pizza muito cara."
+        }
+    }
+</script>

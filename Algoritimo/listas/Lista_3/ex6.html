@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="p">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="x">
+    <input type="text" id="y">
+    <button onclick="soma()"><br>+</button>
+    <button onclick="diferença()"><br>-</button>
+    <button onclick="produto()"><br>X</button>
+    <button onclick="razão()"><br>:</button>
+
+</body>
+</html>
+<script>
+    function soma(){
+        alert ("A soma entre "+ 
+        (Number(x.value))+ 
+        " e "+ (Number(y.value))+ 
+        " é "+ ((Number(x.value)+(Number(y.value)))))
+    }
+    
+    function diferença(){
+        alert ("A diferença entre "+ 
+        (Number(x.value))+ 
+        " e "+ (Number(y.value))+ 
+        " é "+ ((Number(x.value)-(Number(y.value)))))
+    }
+
+    function produto(){
+        alert ("A produto entre "+ 
+        (Number(x.value))+ 
+        " e "+ (Number(y.value))+ 
+        " é "+ ((Number(x.value)*(Number(y.value)))))
+    }
+
+    function razão(){
+        alert ("A razão entre "+ 
+        (Number(x.value))+ 
+        " e "+ (Number(y.value))+ 
+        " é "+ ((Number(x.value)/(Number(y.value)))))
+    }
+
+
+</script>

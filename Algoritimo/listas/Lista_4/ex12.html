@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_peso" placeholder="peso total do elevador">
+    <button onclick="msg()"></button>
+    <p id="alerta"><b></b></p>
+</body>
+</html>
+<script>
+    function msg(){
+    let peso= +ipt_peso
+    if (peso<500){
+        alerta.innerHTML= "Elevador vai se mover"
+    }
+    else{
+        alerta.innerHTML= "Alguém precisa descer do elevador"
+    }
+}
+</script>

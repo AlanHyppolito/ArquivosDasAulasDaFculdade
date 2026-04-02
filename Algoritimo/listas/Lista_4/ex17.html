@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>123</title>
+</head>
+<body>
+    <input type="text" id="ipt_frequencia" placeholder=" Qual a sua frequenia?">
+    <button onclick="msg()">
+        Analisar
+    </button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let frequencia = +ipt_frequencia.value
+        if(frequencia<50){
+            div_msg.innerHTML = `<Img src="https://www.atrnp.com.br/images/jun/turista.jpg">`
+        }
+        else{
+            div_msg.innerHTML = `<Img src="https://blog.portalpos.com.br/wp-content/uploads/2022/04/autonomia-do-aluno.jpg">`
+        }
+    }
+</script>   

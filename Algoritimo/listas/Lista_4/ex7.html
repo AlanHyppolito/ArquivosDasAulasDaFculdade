@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_saldo" placeholder="saldo da conta">
+    <input type="text" id="ipt_debito" placeholder="valor do debito">
+    <button onclick="msg()">Analisar conta</button>
+<p id="alerta"></p>
+
+</body>
+</html>
+<script>
+function msg(){
+    let saldo= +ipt_saldo.value
+    let debito= +ipt_debito.value
+    let saldo2= saldo-debito
+if(saldo2<0){
+    alerta.innerHTML= `<span style='color:red'><b>O saldo atual da conta corrente é ${saldo2} </b>`
+}
+else
+    alerta.innerHTML= `O saldo atual da conta corrente é ${saldo2}`
+}
+
+</script>

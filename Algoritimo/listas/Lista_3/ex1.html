@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite sua idade: <input type="text" id="idadeHomen">
+    <button onclick="msgh()"><b>Aposentadoria Homem</b></button>
+    Digite sua idade: <input id="idadeMulher"></input>
+    <button onclick="msgm()"><b>Aposentadoria Mulher</b></button>
+
+</body>
+
+</html>
+<script>
+    function msgh() {
+        alert("Faltam " + (((Number(70)) - (Number(idadeHomen.value))))+" anos.")
+    }
+    function msgm() {
+        alert("Faltam" + ((Number(60)) - (Number(idadeMulher.value)))+" anos.")
+    }
+</script>

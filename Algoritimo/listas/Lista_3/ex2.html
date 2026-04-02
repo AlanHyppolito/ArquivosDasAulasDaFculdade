@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor da pizza: <input type="text" id="vp">
+    Quantidade de amigos: <input type="text" id="qtdAmigos">
+    <button onclick="msg()"><br>Valor a pagar</button>
+</body>
+</html>
+<script>
+    function msg(){
+        alert ("Cada um dos " + 
+        (Number(vp.value)) + 
+        " amigos vai pagar R$ "+ 
+        ((Number(vp.value)/(Number(qtdAmigos.value)))));
+    }
+</script>

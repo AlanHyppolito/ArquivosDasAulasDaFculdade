@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_Kwh" placeholder="Quantos Kwh por mês">
+    <button onclick="msg()">calcular conta de luz</button>
+
+</body>
+</html>
+<script>
+function msg(){
+    let Kwh = +ipt_Kwh.value
+    let valor = Kwh * 0.85
+
+    if (Kwh<100){
+        alert (`o valor da conta é de R$ ${valor*0.9}`)
+    }
+    else{
+        alert (`o valor da conta é de R$ ${valor}`)
+    }
+}
+    
+
+
+
+</script>

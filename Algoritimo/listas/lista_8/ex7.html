@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     diga um numero entre 0 e 200
+    <input type="text" id="ipt_numero">
+<br>
+    <button onclick="msg()">Viva o 7</button>
+    <br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+function msg(){
+let numero = +ipt_numero.value
+let contador = 7
+while(contador <= numero){
+div_msg.innerHTML += `${contador}<br>`
+contador += 7
+}
+}
+</script>

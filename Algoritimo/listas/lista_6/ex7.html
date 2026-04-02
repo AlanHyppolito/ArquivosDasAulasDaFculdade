@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Qual o seu login?</p>
+    <input type="text" id="ipt_login">
+    <p>Qual a sua senha</p>
+    <input type="text" id="ipt_senha">
+    <p>Qual a sua informação pessoal</p>
+    <input type="text" id="ipt_inf">
+
+    <button onclick="msg()">Autenticar</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    let tentativas = 3
+    function msg(){
+    let login = ipt_login.value
+    let senha = ipt_senha.value
+    let inf = ipt_inf.value
+    if(tentativas>0)
+        if(login=='ana' && senha=='braga' && (inf== '1949' || inf=='Louro josé')){
+            div_msg.innerHTML = ""
+            div_msg.innerHTML += `Usuário autenticado`
+            
+        }
+        else{
+            div_msg.innerHTML = `Falha na autenticação`
+            div_msg.innerHTML += ` Você ainda tem ${tentativas--} tentativa(s) `
+        }
+    else{
+        div_msg.innerHTML += " Usuário BLOQUEADO! Procure seu gerente!"
+    }
+    }
+
+</script>
+<!-- 7. Autenticação Segura com Tentativas Limitadas
+Melhore o exercício 4, de tal forma que: 
+
+a) Sempre que ocorrer uma falha na autenticação, deve aparecer abaixo da frase de "Falha de autenticação" uma outra frase, como esta: 
+
+            Você ainda tem 2 tentativa(s) 
+
+b) A ideia é que o usuário tem 3 tentativas de autenticação. Sempre que errar novamente na autenticação, o "contador" de tentativas reduz em 1 na tela. 
+
+c) Uma vez que se esgotarem as tentativas, deve surgir mais uma frase abaixo, que seria 
+
+     Usuário BLOQUEADO! Procure seu gerente! 
+
+d) Em caso de usuário bloqueado, não adianta nem tentar fazer uma autenticação com as credenciais corretas, que nada mais acontecerá 
+
+e) Caso o usuário autentique com sucesso, sem que tenham sido queimadas as 3 tentativas, a mensagem de autenticação aparece normalmente e a frase com a quantidade de tentativas deve sumir da tela e deve ser "reiniciada" para as próximas falhas. -->

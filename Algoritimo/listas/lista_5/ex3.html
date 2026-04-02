@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_temp" onkeyup="msg()">
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let temp = +ipt_temp.value
+        
+        if(temp <= 14){
+            div_msg.innerHTML = 'Congelante '
+        }
+        else if(temp <= 21){
+            div_msg.innerHTML ='Com Frio'
+        }
+         else if(temp <= 24){
+            div_msg.innerHTML ='Confortável '
+        }
+         else if(temp <= 31){
+            div_msg.innerHTML = 'Com Calor'
+        }
+       else{
+            div_msg.innerHTML ='Calor escaldante'
+       }
+
+    }
+</script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Cadastrar Aluno:
+    <input type="text" id="ipt_cadastro"><br><br>
+    <div id="div_cadastro"></div>
+    Remover Aluno:
+    <input type="text" id="ipt_remocao"><br><br>
+    <div id="div_remocao"></div>
+
+    <button onclick="lista_alunos()">Exibir Alunos</button><br><br>
+    <div id="div_lista"></div>
+
+    <button onclick="cadastro()">Cadastrar Aluno</button><br><br>
+    <button onclick="remover_aluno()">Remover Aluno</button><br><br>
+    <button onclick="atualizacao()">Atualizar Aluno</button><br><br>
+    <div id="div_att"></div>
+</body>
+</html>
+<script>
+
+    let lista_aluno = []
+    
+function lista_alunos(){
+    if(lista_aluno == ""){
+        div_lista.innerHTML = "Nenhum aluno cadastrado na lista"
+    }
+    else{div_lista.innerHTML = lista_aluno}
+}
+
+function cadastro(){
+    if(ipt_cadastro.value == ""){
+        div_cadastro.innerHTML = `Preencha o campo de cadastro de aluno`
+    }
+    if(lista_aluno.includes(ipt_cadastro.value)){
+        div_cadastro.innerHTML = `Aluno já cadastrado`
+    }
+    else{
+        lista_aluno.push(ipt_cadastro.value)
+        div_cadastro.innerHTML = `Aluno ${ipt_cadastro.value} foi cadastrado(a) com sucesso!`
+    }
+}
+
+function remover_aluno(){
+let remocao = lista_aluno.indexOf(ipt_remocao.value)
+
+    if(ipt_remocao.value == ""){
+        div_remocao.innerHTML = `Preencha o campo de remoção de aluno`
+    }
+    else if(lista_aluno.includes(ipt_remocao.value)== false){
+        div_remocao.innerHTML = `Aluno não encontrado na lista`
+    }
+    else{
+        lista_aluno.splice(remocao, 1)
+        div_remocao.innerHTML = `Aluno ${ipt_remocao.value} removido`
+    }
+}
+
+function atualizacao(){
+    if(ipt_cadastro.value == "" && ipt_remocao.value == ""){
+        div_att.innerHTML = "Preencha os campos de cadastro e remoção de aluno"
+    }
+    let remocao = lista_aluno.indexOf(ipt_remocao.value)
+    if(lista_aluno.includes(ipt_remocao.value)){
+        lista_aluno.splice(remocao, 1)
+        lista_aluno.push(ipt_cadastro.value)
+        div_att.innerHTML = `Aluno ${ipt_remocao.value} removido e ${ipt_cadastro.value} adicionado no lugar`
+    }
+    else {
+        lista_aluno.push(ipt_cadastro.value)
+        div_att.innerHTML = `Aluno ${ipt_cadastro.value} foi cadastrado(a) com sucesso!`
+    }
+}
+</script>

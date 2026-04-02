@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_serie" placeholder="qual SITICOM">
+    <input type="text" id="ipt_eps" placeholder="quantidade de episodios">
+    <button onclick="msg()">erificar nivel</button>
+</body>
+</html>
+<script>
+    function msg(){
+        let serie= ipt_serie.value
+        let eps= +ipt_eps.value
+        let tempo= eps*22
+        alert `Vejo que você gosta da série ${serie}`
+        if (tempo>1800){
+            alert ("Uau, você realmente gosta dessa série!")
+        }
+    }
+</script>

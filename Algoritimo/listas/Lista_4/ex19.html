@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_temp" placeholder=" Qual é a temperatur do seu ambiente">
+    <button onclick="msg()">Verificar clima</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let temp = +ipt_temp.value
+        if (temp<10){
+            div_msg.innerHTML = `<img width="500" src="../Imagens/alimento_em_bom_estado.png" alt="Alimentos em bom estado">`
+        }
+        else{
+             div_msg.innerHTML = `<img width="500" src="../Imagens/alimento_em_mal_estado.png" alt="Alimentos em mal estado">`
+        }
+    }
+</script>

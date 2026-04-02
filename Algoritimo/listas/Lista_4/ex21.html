@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_usuario" placeholder="Nome de Usuario">
+    <input type="text" id="ipt_tipo" placeholder="Tipo do pokemon">
+    <button onclick="msg()">
+        Pesquisar
+    </button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let x = ipt_usuario.value
+        let y = ipt_tipo.value
+
+    if (y== "Fogo"){
+        div_msg.innerHTML = `Olá, ${x}, aqui está as informações sobre o tipo ${y}:<br>
+- Ele é mais forte contra: Planta <br>
+- Ele é mais fraco contra: Fogo, Água e Dragão <br>
+- Ele é mais resistente contra: Fogo e Planta <br>
+- Ele é menos resistente contra: Água <br><br>
+ <img width="500" src="../Imagens/charmander.png">
+Boa sorte em sua jornada Pokémon!`
+
+
+    }
+    else if (y== 'Água'){
+        div_msg.innerHTML = `Olá, ${x}, aqui está as informações sobre o tipo ${y}:<br>
+- Ele é mais forte contra: Fogo <br>
+- Ele é mais fraco contra: Água, Planta e Dragão <br>
+- Ele é mais resistente contra:  Fogo e Água <br>
+- Ele é menos resistente contra: Planta e Elétrico <br><br>
+ <img width="500" src="../Imagens/squirtle.png">
+Boa sorte em sua jornada Pokémon!`
+    }
+    else if (y== 'Planta'){
+        div_msg.innerHTML = `Olá, ${x}, aqui está as informações sobre o tipo ${y}:<br>
+- Ele é mais forte contra: Água <br>
+- Ele é mais fraco contra:  Fogo, Planta e Dragão <br>
+- Ele é mais resistente contra:  Água, Planta e Elétrico <br>
+- Ele é menos resistente contra:Fogo <br><br>
+ <img width="500" src="../Imagens/planta.png">
+Boa sorte em sua jornada Pokémon!`
+    }
+    else if (y== 'Elétrico'){
+        div_msg.innerHTML = `Olá, ${x}, aqui está as informações sobre o tipo ${y}:<br>
+- Ele é mais forte contra: Água <br>
+- Ele é mais fraco contra: Planta, Elétrico e Dragão <br>
+- Ele é mais resistente contra: Elétrico <br>
+- Ele é menos resistente contra: Nada <br><br>
+ <img width="500" src="../Imagens/pikachu.png">
+Boa sorte em sua jornada Pokémon!`
+    }
+    else if (y== 'Dragão'){
+        div_msg.innerHTML = `Olá, ${x}, aqui está as informações sobre o tipo ${y}:<br>
+- Ele é mais forte contra: Dragão <br>
+- Ele é mais fraco contra: Nada <br>
+- Ele é mais resistente contra: Fogo, Água, Planta e Elétrico <br>
+- Ele é menos resistente contra: Dragão <br><br>
+ <img width="500" src="../Imagens/salamence.png">
+Boa sorte em sua jornada Pokémon!`
+    }
+    else{
+        div_msg.innerHTML = "Essa tipagem não é aceita"
+    }
+}
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_rendaFamiliar" placeholder="Renda familiar">
+    <input type="text" id="ipt_valorPrestação" placeholder="valor da prestação">
+    <button onclick="msg()">verificar financiamento</button>
+    <p id="p_msgFinanciamento"></p>
+    <p id="p_alerta"></p>
+
+</body>
+</html>
+<script>
+function msg(){
+    let renda= +ipt_rendaFamiliar.value
+    let valor= +ipt_valorPrestação.value
+    let prestação= (valor/renda)*100
+    p_msgFinanciamento.innerHTML= `A prestação corresponde a ${prestação} % da renda familiar`
+    if(prestação>30){
+        p_alerta.innerHTML= "<span style='color:red'> Será necessário complementar a renda familiar"
+    }
+}
+</script>

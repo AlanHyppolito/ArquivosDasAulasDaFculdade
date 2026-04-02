@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_homens" placeholder="quantos homens">
+    <input type="text" id="ipt_mulheres" placeholder="qunatas mulheres">
+    <button onclick="msg()">Ligar elevado</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let p_homem = +ipt_homens.value * 90
+        let p_mulheres = +ipt_mulheres.value * 70
+        let peso_total = p_homem + p_mulheres
+        let diferença = peso_total - 500
+        if(peso_total<500){
+            div_msg.innerHTML= `<span style='color:green'>Elevador vai se mover, pois está com ${peso_total} Kg.`
+        }
+        else{
+            div_msg.innerHTML= `<span style='color:red'>Alguém precisa descer. Precisa perder ${diferença} para mover o elevador `
+        }
+    }
+</script>

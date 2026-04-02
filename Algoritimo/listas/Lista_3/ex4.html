@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome: <input type="text" id="nome">
+    Ki: <input type="text" id="ki">
+    <button onclick="msg()"><br>Ver ki em cada forma</button>
+</body>
+</html>
+<script>
+    function msg(){
+        alert ("O ki de "+ nome.value+
+         " na forma Super Sayajin é "+ 
+        ((Number(ki.value))*(Number(50)))
+    )
+
+
+        alert ("O ki de "+ nome.value+
+            " na forma Super Sayajin 2 é "+
+            ((Number(ki.value))*(Number(100)))
+         )
+    }
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> Cadastro de Viagens</h1>
+
+    <input type="text" id="ipt_nome_lugar" placeholder="Nome do lugar"><br><br>
+
+    <input type="text" id="ipt_valor" placeholder="Valor gasto na viagem"><br><br>
+
+    <button onclick="cadastro()">Cadastrar</button><br><br>
+
+    <input type="text" id="ipt_busca" placeholder="Buscar um lugar"><br><br>
+
+    <button onclick="busca()">Buscar</button><br>
+
+    <div id="div_busca"></div>
+
+</body>
+</html>
+<script>
+
+let lugar = ipt_nome_lugar.value
+let valor = +ipt_valor.value
+
+let lugares = []
+let valores = []
+
+let existe_lugar = !lugar.includes("")
+
+let existe_valor = !valor.includes("")
+
+function cadastro(){
+    if(existe_lugar && existe_valor)
+        lugares.push(lugar)
+        valores.push(valor)
+}
+function busca(){
+    let busca = ipt_busca.value
+
+    let primeira_viagem = lugares.indexof(buscar)
+    let ultima_viagem = lugares.lastIndexOf(buscar)
+
+    let valor1 = valores[primeira_viagem]
+    let valor2 = valores[ultima_viagem]
+
+    if(primeira_viagem == ultima_viagem){
+        div_busca.innerHTML = `Você já visitou ${busca} e gastou ${valor1}`
+    }
+    else if(ultima_viagem != primeira_viagem){
+       div_busca.innerHTML =` Você já visitou ${buscar} e gastou R$${valor1} da primeira vez e R$${valor2} da última vez`
+    }
+    else{
+        div_busca.innerHTML = `Você nunca visitou ${primeira_viagem}`
+    }
+}
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    valor a ser depositado/retirado: <input type="text" id="valor">
+    <button onclick="dep()">Depositar</button>
+    <button onclick="ret()">Retirar</button>
+
+
+</body>
+</html>
+<script>
+    let saldo =0
+    function dep(){
+        let val = +valor.value
+        saldo = saldo + val
+        
+        alert ("Depósito de "+ val +" efetuado! Saldo atual:"+saldo)
+    }
+
+    function ret(){
+        let val = +valor.value
+        saldo = saldo - val
+        alert ("`Retirada de "+ val +" efetuada! Saldo atual: "+saldo )
+    }
+    
+</script>`  

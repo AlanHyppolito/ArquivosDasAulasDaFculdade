@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um intervalo:
+    <br>
+    <input type="text" id="ipt_numero1"> a <input type="text" id="ipt_numero2">
+    <button onclick="msg()">S2 Pares</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+function msg(){
+let numero1 = +ipt_numero1.value
+let numero2 = +ipt_numero2.value
+while(numero1 <= numero2){
+    div_msg.innerHTML = ``
+}
+
+}
+</script>

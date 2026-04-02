@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_texto" oninput="analizar()">
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+function analizar(){
+    let texto = ipt_texto.value
+    let tamanho_texto = texto.length
+
+        div_msg.innerHTML = `O tamanho do texto é: ${tamanho_texto} <br>`
+
+    if(tamanho_texto>=8){
+        div_msg.innerHTML += `O texto tem 8 ou mais caracteres<br>`
+    }
+    else{
+        div_msg.innerHTML += `O texto tem menos de 8 caracteres<br>`
+    }
+
+    let indice_ponto_com = texto.indexOf(".com")
+
+        div_msg.innerHTML += `Indice do (.com): ${indice_ponto_com}<br>`
+        
+    let indice_arroba = texto.indexOf("@")
+
+        div_msg.innerHTML += `Indice do @: ${indice_arroba}<br>`
+
+    let fim = texto.endsWith(".com")|| texto.endsWith('.com.br')
+    let inicio = !texto.startsWith("@") || texto.startsWith(".com")
+    let filtro = (indice_arroba<indice_ponto_com+1)>-1 && fim && inicio
+    let primeira_letra = texto[0]
+    let ultima_letra = texto[tamanho_texto - 1]
+    if(filtro){
+        div_msg.innerHTML += `O e-mail é valido<br>`
+    }
+    else{
+         div_msg.innerHTML += "Não é um e-mail valido<br>"
+    }
+    if(tamanho_texto>0){
+        div_msg.innerHTML += `Primeira letra: ${primeira_letra}<br>Ultima letra ${ultima_letra}<br>`
+    }
+    let primeira_letra_ = texto.substring(0, 1)
+    let resto = texto.substring(1)
+    let primeira_letra_maiuscula = primeira_letra.toUpperCase() + resto.toLowerCase()
+        div_msg.innerHTML += `${primeira_letra_maiuscula}`
+        
+    //*texto.startsWith
+    //texto.endsWith
+    //texto.toLowerCase
+    //texto.toUpperCase
+    //texto.subtring()
+    //texto.replace()
+    // includes
+    //obter o indice do @ e validar se o @ está antes ou depois do .com
+    // desafio: Independentemente de como o texto estiver esxrito transforme apenas a prieira letra me maiuscula e o restante em minuscula
+/**let regex = new RegExp("[0-9][A-z][@-_][-]")
+   ** let contem_numeros = regex.test(texto)
+    
+    *! if(comtem_numeros){
+    *TODO:    div_msg.innerHTML = `O texto contem numeros `
+    }
+    else{
+    *?   div_msg.innerHTML = `O texto NÃO contem numeros`
+    }*/
+}
+</script>

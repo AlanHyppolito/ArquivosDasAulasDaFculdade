@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_qtd" placeholder="quantidade de chocolate">
+    <button onclick="msg()">Compra</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let qtd = +ipt_qtd.value
+        if(qtd>=12){
+            div_msg.innerHTML = `o valor da sua compra foi de ${qtd * 2,5} Reais`
+        }
+        else{
+            div_msg.innerHTML = `o valor da sua compra foi de ${qtd * 3} Reais`
+        }
+
+    }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let frutas = ["Abacate", "Uva", "maçã",]
+
+let Ultima_fruta = frutas[frutas.length - 1]
+
+console.log(frutas)
+
+console.log("Tamanho do vetor: ", frutas.length)
+
+console.log("Primeiro item do vetor: ", frutas[0].length)
+
+frutas.push("goiaba", "pera")
+
+console.log(frutas)
+
+let existe_pera = frutas.includes("pera")
+
+let indice_pera = frutas.indexOf("pera")
+
+if(existe_pera){
+    console.log(`existe pera na lista no indice ${indice_pera}`)
+
+}
+else{
+    console.log("não existe pera na lista")
+}
+
+frutas.pop() //rempve o ultimo item
+
+frutas.splice(2, 1, "tomate") // substitue 
+
+frutas.shift() // remove o primeiro item
+
+console.log(frutas)
+
+
+</script>

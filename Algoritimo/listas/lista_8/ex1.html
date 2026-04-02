@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="msg()">Contar</button><br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+function msg(){
+    div_msg.innerHTML = ""
+    let numeros = 1
+    while(numeros < 16){
+        div_msg.innerHTML +=` ${numeros}<br>`
+        numeros++
+    }
+}
+</script>

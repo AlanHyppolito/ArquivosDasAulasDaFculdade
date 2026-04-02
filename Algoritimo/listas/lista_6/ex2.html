@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Qual o tamanho da tela</h1><br>
+    <input type="text" id="ipt_tela"> <br>
+
+    <h1>Qual a cor do celular</h1><br>
+   <select id="ipt_cor">
+    <option value=""></option>
+    <option value="preto">Preto</option>
+    <option value="azul">Azul</option>
+    <option value="prata">Prata</option>
+    <option value="vermelho">Vermelho</option>
+   </select>
+
+    <button onclick="msg()">Qual cor?</button>
+
+    <div id="div_msg"></div>
+
+</body>
+</html>
+<script>
+    function msg(){ 
+        alert(ipt_cor.value)
+        let tamanho = +ipt_tela.value
+        let cor = ipt_cor.value
+
+        if((ipt_cor.value == 'prata'||ipt_cor.value== 'preto') && tamanho >=6.5){
+            div_msg.innerHTML = `<img width="500" src="../Imagens/frlicidade-3.webp>`
+                
+            }
+        else{
+            div_msg.innerHTML = `<img width="500" src="../Imagens/pessoa-cansada.png>`
+        }
+    }
+
+</script>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Primeiro colocado : <select name="" id="v1">
+        <option value=""></option>
+        <option value="pedro">Pedro</option>
+        <option value="rafael">Rafael</option>
+        <option value="jorge">Jorge</option>
+        <option value="caio">Caio</option>
+        <option value="eric">Eric</option>
+    </select>
+    <br>
+    Segundo colocado :<select name="" id="v2">
+        <option value=""></option>
+        <option value="pedro">Pedro</option>
+        <option value="rafael">Rafael</option>
+        <option value="jorge">Jorge</option>
+        <option value="caio">Caio</option>
+        <option value="eric">Eric</option>
+    </select>
+    <br>
+    Terceiro colocade: <select name="" id="v3">
+        <option value=""></option>
+        <option value="pedro">Pedro</option>
+        <option value="rafael">Rafael</option>
+        <option value="jorge">Jorge</option>
+        <option value="caio">Caio</option>
+        <option value="eric">Eric</option>
+    </select>
+    <br>
+
+    Quarto colocado: <select name="" id="v4">
+        <option value=""></option>
+        <option value="pedro">Pedro</option>
+        <option value="rafael">Rafael</option>
+        <option value="jorge">Jorge</option>
+        <option value="caio">Caio</option>
+        <option value="eric">Eric</option>
+    </select>
+    <br>
+    
+    Quinto colocado : <select name="" id="v5">
+        <option value=""></option>
+        <option value="pedro">Pedro</option>
+        <option value="rafael">Rafael</option>
+        <option value="jorge">Jorge</option>
+        <option value="caio">Caio</option>
+        <option value="eric">Eric</option>
+    </select>
+    </div>
+    <br>
+    <button onclick="msg()"><power>Exibir resultado</power></button>
+    <br>
+    <div id="div_msg"></div>
+
+    <h1>Meus Campeões</h1>
+    <br>
+    <div id="div_campeoes"></div>
+    <br>
+    <br>
+    Adicionar : <input type="text" id="ipt_campeao">
+    <button onclick="campeao()">Adicionar</button>
+    <br>
+    Buscar : <input type="text" id="ipt_busca">
+    <button onclick="buscar()">Pesquisar</button>
+    <div id="div_buscar"></div>
+</body>
+</html>
+<script>
+    let acertos = 0
+    let lugar = ["rafael", "caio", "pedro", "jorge", "eric"]
+function msg(){
+    div_msg.innerHTML = ""
+    acertos = 0
+    
+    let l1 = v1.value
+    let l2 = v2.value
+    let l3 = v3.value
+    let l4 = v4.value
+    let l5 = v5.value
+    
+    let primeiro = lugar[0]
+    let segundo = lugar[1]
+    let terceiro = lugar[2]
+    let quarto = lugar[3]
+    let quinto = lugar[4]
+
+    div_msg.innerHTML += `Acertou:`
+    if(l1 == primeiro ){
+        acertos += 1
+        div_msg.innerHTML += `<br> ${l1}`
+    }
+    if(l2 == segundo){
+        acertos += 1
+         div_msg.innerHTML += `<br> ${l2}`
+    }
+    if(l3 == terceiro){
+        acertos += 1
+         div_msg.innerHTML += `<br> ${l3}`
+    }
+    if(l4 == quarto){
+        acertos += 1
+         div_msg.innerHTML += `<br> ${l4}`
+    }
+    if(l5 == quinto){
+        acertos += 1
+         div_msg.innerHTML += `<br> ${l5}`
+    }
+     div_msg.innerHTML += `<br> Totalizando ${acertos} acerto(s).<br>`
+
+let erro = (5 - acertos)
+
+ div_msg.innerHTML += `Errou ${erro} sendo ele(s) :`
+
+    if(l1 != primeiro ){
+         div_msg.innerHTML += `<br> ${l1}`
+    }
+    if(l2 != segundo){
+         div_msg.innerHTML += `<br> ${l2}`
+    }
+    if(l3 != terceiro){
+         div_msg.innerHTML += `<br> ${l3}`
+    }
+    if(l4 != quarto){
+         div_msg.innerHTML += `<br> ${l4}`
+    }
+    if(l5 != quinto){
+         div_msg.innerHTML += `<br> ${l5}`
+    }
+    if(acertos > erros){
+        div_msg.innerHTML += "<br>Você conhece bem essa competição!"
+    }
+    else{
+         div_msg.innerHTML += "<br>Você precisa acompanhar mais essa competição!"
+    }
+    div_msg.innerHTML +=   
+    `<br>Em primeiro lugar :Rafael 🥇
+     <br>Em segundo lugar :Caio
+     <br>Em terceiro lugar :Pedro 
+     <br>Em quarto lugar :Jorge
+     <br>Em quinto lugar :Eric`
+    }
+ let lista_campeoes = []
+function campeao(){
+    let campeao = ipt_campeao.value
+    lista_campeoes.push(` ${campeao}`)
+    div_campeoes.innerHTML = lista_campeoes
+}
+function pesquisa(){
+    let busca = itp_busca.value
+
+    let lista1 = lista_campeoes.indexOf(busca)
+    let ranking = lugar.indexOf(busca)
+if(lista1 && ranking){
+    div_busca.innerHTML += "<br>Esta presente em ambas as listas."
+}
+    if(lista1){
+        div_busca.innerHTML += "<br>Esta presente na sua lista."
+    }
+    else{
+         div_busca.innerHTML += "<br>Não esta presente na sua lista."
+    }
+
+    if(ranking){
+       div_busca.innerHTML += "<br>Esta presente no ranking."
+    }
+    else{
+         div_busca.innerHTML += "<br>Não esta presente no ranking."
+    }
+}
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_latas" placeholder="quantas latas de refri você toma por dia">
+    <button onclick="msg()">Quantos refris</button>
+    <p id="p_latas"></p>
+    <p id="p_diabetes"></p>
+</body>
+</html>
+<script>
+    let qtd = +ipt_latas.value * 365;
+    function msg(){
+    let qtd = +ipt_latas.value * 365;
+    p_latas.innerHTML=qtd
+    if (qtd>=500){
+        p_diabetes.innerHTML= "Cuidado com a diabetes!."
+    }
+    }
+</script>

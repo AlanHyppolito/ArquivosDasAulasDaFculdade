@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_altura" placeholder="qual é a sua atura em metros">
+    <button onclick="msg()">Analisar Estatura</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let altura = +ipt_altura.value
+        if (altura < .66){
+            div_msg.innerHTML = 'Você pode ser piloto de corrida'
+        }
+        else if (altura < 1.81){
+            div_msg.innerHTML = 'Você pode ser piloto de corrida'
+        }
+        else{
+            div_msg.innerHTML = 'Você pode ser piloto de corrida'
+        }
+    }
+</script>

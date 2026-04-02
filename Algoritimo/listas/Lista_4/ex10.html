@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_saldo" placeholder="informe o saldo">
+    <button onclick="msg()"> Verificar Finanças</button>
+    <p id="alerta"></p>
+</body>
+</html>
+<script>
+    function msg(){
+        let saldo= +ipt_saldo.value
+        if (saldo==0){
+            alerta.innerHTML= `<span style='color:black'> Conta zerada`
+        }
+        else if (saldo<0){
+            alerta.innerHTML= `<span style='color:red'>Está devendo!`
+        }
+        else{
+            alerta.innerHTML= `<span style='color:blue'>Saldo positivo! sorriso`
+        }
+    }
+</script>

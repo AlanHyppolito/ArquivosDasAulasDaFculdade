@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="saldo1">0</div>
+    <br>
+    <button onclick="rec()">Receber 100</button>
+    <button onclick="pag()">Pagar 50</button>
+</body>
+</html>
+<script>
+    let saldo =0
+    
+
+    function rec(){
+        saldo= saldo + 100
+        saldo1.innerHTML = saldo
+        alert ("Transferência de R$100 recebida!, saldo atual:R$" + saldo)
+    }
+    function pag(){
+        saldo=saldo - 50
+        saldo1.innerHTML = saldo
+        alert ("Pagamento de R$50 efetuado!, saldo atual:R$" + saldo)
+    }
+</script>

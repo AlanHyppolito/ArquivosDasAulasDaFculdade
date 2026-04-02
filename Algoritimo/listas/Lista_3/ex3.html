@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor da passagem: <input type="text" id="vp">
+    Quantas vezes por mes: <input type="text" id="qvpm">
+    <button onclick="msg()"><br>Ver economia</button>
+
+</body>
+</html>
+<script>
+    function msg(){
+        alert ("Você economizará R$ "+
+        ((Number(vp.value)*(Number(qvpm.value)))*(Number(0.5))) +
+        " por mês")
+    }
+</script>

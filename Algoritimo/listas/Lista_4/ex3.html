@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P><b>De tres notas</b></P>
+    <input type="text" id="ipt_nota1">
+    <input type="text" id="ipt_nota2">
+    <input type="text" id="ipt_nota3">
+    <button onclick="msg()">Analisar desempenho</button>
+    <p id="p_media"></p>
+    <p id="p_fora_de_serie"></p>
+</body>
+</html>
+<script>
+    let nota1= +ipt_nota1.value
+    let nota2= +ipt_nota2.value
+    let nota3= +ipt_nota3.value
+    let media= (nota1+nota2+nota3)/3
+    function msg(){
+        p_media.innerHTML= `Sua média foi de ${media}`
+        if (media>= 9.4){
+            p_fora_de_serie.innerHTML = "Parabens, você é fora de série"
+        }
+    }
+
+</script>

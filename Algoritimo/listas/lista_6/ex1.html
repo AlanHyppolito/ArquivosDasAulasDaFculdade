@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Qual a nota do atendimento:</h1>
+    <input type="text" id="ipt_atendimento">
+    <button onclick="msg()"></button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function msg(){
+        let avaliação = +ipt_atendimento.value
+
+        if(avaliação == 0 ||avaliação == 10){
+            div_msg.innerHTML = `Nota inválida`
+        }
+        else if(avaliação>0 && avaliação<5 ){
+            div_msg.innerHTML = `Não aprovado`
+        }
+        else if(avaliação== 5 || avaliação==6){
+            div_msg.innerHTML = `Neutro`
+        }
+        else if(avaliação==6){
+            div_msg.innerHTML = `Aprovado`
+        }
+    }
+</script>
