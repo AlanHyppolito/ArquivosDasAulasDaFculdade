@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_texto">
+    <button onclick="inverter()"></button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function inverter(){
+        let vetor = []
+        let texto = ipt_texto.value;
+        let lugar = vetor.length;
+
+        vetor.push(texto)
+
+        for(let i = lugar; i != 0; i--)
+            div_msg.innerHTML += vetor[i] 
+    }
+</script>

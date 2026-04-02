@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="ipt_elemento"><br>
+    <button onclick="addVetor()">Adicionar elemento</button><br>
+    <button onclick="exibirDuplicados()">Exibir Duplicados</button><br>
+    <button onclick="delDuplicadas()">Remover Duplicatas</button>
+
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    let vetor = [];
+    let exibidos = [];
+    function addVetor() {
+        div_msg.innerHTML = "";
+        let elemento = ipt_elemento.value;
+        vetor.push(elemento);
+        for (let i = 0; i < vetor.length; i++) {
+            div_msg.innerHTML += vetor[i] + '<br>';
+        }
+        ipt_elemento.value = "";
+    }
+    function exibirDuplicados() {
+        div_msg.innerHTML = "";
+        for (let i = 0; i < vetor.length; i++) {
+
+            let encontrei = false;
+
+            for (let b = 0; b < exibidos.length; b++) {
+                if (exibidos[b] == vetor[i]) {
+                    encontrei = true;
+                    break;
+                }
+            }
+            if (encontrei) {
+                continue;
+            }
+            console.log("1232")
+            for (let j = 0; j < vetor.length; j++) {
+                if (vetor[i] == vetor[j] && i != j) {
+                    div_msg.innerHTML += `${vetor[i]} <br>`;
+                    exibidos.push(vetor[i]);
+                    break;
+                }
+            }
+
+        }
+    }
+    function delDuplicadas() {
+        div_msg.innerHTML = "";
+        for (let i = 0; i < vetor.length; i++) {
+            for (let b = 0; b < vetor.length; b++) {
+                if (vetor[i] == vetor[b] && i != b) {
+                    vetor.splice(b, 1);
+                }
+            }
+        }
+        for (let i = 0; i < vetor.length; i++) {
+            div_msg.innerHTML += vetor[i] + '<br>';
+        }
+    }
+</script>

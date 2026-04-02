@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt_nome"> <br>
+    <button onclick="adicionar()">Adicionar</button> <br>
+    <button onclick="exibirDuplicados()">Exibir duplicados</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    let vetor = [];
+    let exibidos = [];
+
+    function adicionar() {
+        let nome = ipt_nome.value;
+        vetor.push(nome);
+        for (let i = 0; i< vetor.length; i++){
+            div_msg.innerHTML = `${vetor[i]} <br>`;
+        }
+}
+
+    function exibirDuplicados() {
+        for (let i = 0; i < vetor.length; i++) {
+
+            let encontrei = false;
+
+            for (let b = 0; b < exibidos.length; b++) {
+                if (exibidos[b] == vetor[i]) {
+                    encontrei = true;
+                    break;
+                }
+            }
+
+            if (encontrei) {
+                continue;
+
+
+                for (let j = 0; j < vetor.length; j++) {
+                    if (vetor[i] == vetor[j] && i != j) {
+                        div_msg.innerHTML += `${vetor[i]} <br>`;
+                        exibidos.push(vetor[i]);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+</script>
