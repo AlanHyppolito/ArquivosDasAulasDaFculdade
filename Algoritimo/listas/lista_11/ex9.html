@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <button onclick="msg()">Gerar uma nota de aluno entre 3 e 10</button> <br>
+    <button onclick="msg1()">Gerar uma nota de aluno entre 3 e 10</button> <br>
     <div id="div_msg1"></div>
-    <button onclick="msg2">Gerar uma frequência de aluno entre 50 e 100</button> <br>
+    <button onclick="msg2()">Gerar uma frequência de aluno entre 50 e 100</button> <br>
     <div id="div_msg2"></div><br>
-    <button onclick="msg()">Ver Aprovação</button><br>
+    <button onclick="msg3()">Ver Aprovação</button><br>
     <div id="div_msg3"></div>
 </body>
+
 </html>
 <script>
     let numero1 = 0
     let numero2 = 0
-    function msg1(){
+    function msg1() {
         numero1 = (Math.random(0) * (10 - 3) + 3).toFixed(1)
-        div_msg1.innerHTML = numero
+        div_msg1.innerHTML = numero1
     }
-    function msg2(){
+    function msg2() {
         numero2 = (Math.random(0) * (100 - 50) + 50).toFixed(1)
-        div_msg2.innerHTML = numero
+        div_msg2.innerHTML = numero2
     }
     let a1 = "reprovado"
-    function msg3(){
-        if(numero1 >= 6 && numero2 >= 75){
+    function msg3() {
+        if (numero1 >= 6 && numero2 >= 75) {
             a1 = "aprovado"
         }
         div_msg3.innerHTML = `Com nota ${numero1} e frequência ${numero2}, o aluno está ${a1}`
