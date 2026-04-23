@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="msg()">Gerar uma nota de aluno entre 3 e 10</button> <br>
+    <div id="div_msg1"></div>
+    <button onclick="msg2">Gerar uma frequência de aluno entre 50 e 100</button> <br>
+    <div id="div_msg2"></div><br>
+    <button onclick="msg()">Ver Aprovação</button><br>
+    <div id="div_msg3"></div>
+</body>
+</html>
+<script>
+    let numero1 = 0
+    let numero2 = 0
+    function msg1(){
+        numero1 = (Math.random(0) * (10 - 3) + 3).toFixed(1)
+        div_msg1.innerHTML = numero
+    }
+    function msg2(){
+        numero2 = (Math.random(0) * (100 - 50) + 50).toFixed(1)
+        div_msg2.innerHTML = numero
+    }
+    let a1 = "reprovado"
+    function msg3(){
+        if(numero1 >= 6 && numero2 >= 75){
+            a1 = "aprovado"
+        }
+        div_msg3.innerHTML = `Com nota ${numero1} e frequência ${numero2}, o aluno está ${a1}`
+    }
+    /*
+    9. Crie um programa o qual:  
+a) Tenha um botão "Gerar uma nota de aluno entre 3 e 10" que faz aparecer, abaixo dele, a nota gerada  
+
+b) Tenha um botão "Gerar uma frequência de aluno entre 50 e 100" que faz aparecer, abaixo dele, a frequência gerada  
+
+c) Deixe todos os valores com 1 casa decimal na tela  
+
+d) Ao clicar no botão “Ver Aprovação”, exiba na tela uma mensagem como a abaixo, de acordo com a situação do aluno: 
+
+    "Com nota X e frequência Y, o aluno está Z!" 
+
+Onde X é a nota, Y a frequência e Z a situação do aluno (aprovado ou reprovado), sendo que para a aprovação, o aluno deve possuir nota a partir de 6 e frequência a partir de 75%. */
+</script>

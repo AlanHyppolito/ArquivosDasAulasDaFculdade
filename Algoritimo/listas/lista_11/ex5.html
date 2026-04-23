@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="simular()">Jogar</button>
+    <div id="div_msg"></div>
+    <div id="div_vitoria"></div>
+</body>
+
+</html>
+<script>
+    let contador = 0
+    let vitoria1 = 0
+    function simular() {
+
+        contador++
+
+        let saida = ['pedra', 'papel', 'tesoura']
+
+        let j1 = (Math.random() * (2)).toFixed(0)
+        let j2 = (Math.random() * (2)).toFixed(0)
+
+
+        let Ipapel = `<img width="200px"  src="papel.jpg" alt="">`
+        let Itesoura = `<img width="200px" src="tesoura.jpg" alt="">`
+        let Ipedra = `<img width="200px" src="pedra.jpg" alt="">`
+
+        if (saida[j1] == 'pedra' && saida[j2] == 'tesoura') {
+            vitoria1++
+            div_msg.innerHTML = Ipedra + Itesoura +'<br>'
+            div_vitoria.innerHTML = `Jogador 1 ${vitoria1} / Jogador 2 ${contador - vitoria1}`
+        }else if(saida[j1] == 'papel' && saida[j2] == 'pedra'){
+            vitoria1++
+            div_msg.innerHTML = Ipapel + Ipedra +'<br>'
+            div_vitoria.innerHTML = `Jogador 1 ${vitoria1} / Jogador 2 ${contador - vitoria1}`
+        }else if(saida[j1] == 'tesoura' && saida[j2] == 'papel'){
+            vitoria1++
+            div_msg.innerHTML = Itesoura + Ipapel +'<br>'
+            div_vitoria.innerHTML = `Jogador 1 ${vitoria1} / Jogador 2 ${contador - vitoria1}`
+        }
+        else if (saida[j1] == 'tesoura' && saida[j2] == 'pedra') {
+            div_msg.innerHTML = Itesoura + Ipedra +'<br>'
+            div_vitoria.innerHTML = `Jogador 1 ${vitoria1} / Jogador 2 ${contador - vitoria1}`
+        }else if(saida[j1] == 'pedra' && saida[j2] == 'papel'){
+            div_msg.innerHTML = Ipedra +  Ipapel+'<br>'
+            div_vitoria.innerHTML = `Jogador 1 ${vitoria1} / Jogador 2 ${contador - vitoria1}`
+        }else if(saida[j1] == 'papel' && saida[j2] == 'tesoura'){
+            div_msg.innerHTML = Ipapel +  Itesoura+'<br>'
+            div_vitoria.innerHTML = `Jogador 1 ${vitoria1} / Jogador 2 ${contador - vitoria1}`
+        }else{
+            contador--
+            div_msg.innerHTML = "empate"
+        }
+
+        console.log(vitoria1)
+    }
+    /*5. Simulação
+Tente fazer uma pequena simulação do famoso jogo "jo ken po" (pedra, papel e tesoura) em HTML/JS:  
+
+a) Ao clicar no botão "Jogar", deve aparecer abaixo dele ou a figura de uma pedra, de uma folha de papel ou de uma tesoura (seja qual for a imagem, ela deve ter 200px de altura). 
+
+b) Abaixo das imagens, exiba quem venceu e exiba/atualize o placar de vitórias como abaixo: 
+
+     O jogador 1 venceu!  
+
+     Jogador 1: 1 vitória(s) 
+
+     Jogador 2: 0 vitória(s) */
+</script>

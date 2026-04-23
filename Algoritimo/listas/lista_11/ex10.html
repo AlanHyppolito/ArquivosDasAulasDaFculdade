@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+        div {
+            background-color: black;
+            height: 150px;
+            width: 150px;
+            border-radius: 15%;
+    
+            color: white;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+    </style>
+<body>
+    <button onclick="msg1()">Dado Jogador 1</button><br>
+    <div id="div_msg1"></div><br>
+    <button onclick="msg2()">Dado Jogador 2</button><br>
+    <div id="div_msg2"></div><br>
+    <button onclick="msg3()">Comparar Resultados</button><br>
+    <div id="div_msg3"></div>
+</body>
+
+</html>
+
+<script>
+    let D1 = 0
+    let D2 = 0
+    function msg1() {
+        let numero = (Math.random() * (6 - 1) + 1).toFixed(0)
+        let D1 = numero
+        div_msg1.innerHTML = `${D1}`
+    }
+    function msg2() {
+        let numero = (Math.random() *(6 - 1) + 1).toFixed(0)
+        let D2 = numero
+        div_msg2.innerHTML = `${D2}`
+    }
+    function msg3() {
+        if (D1 > D2) {
+            div_msg3.innerHTML = "Jogador 1 venceu"
+        } else if (D2 > D1) {
+            div_msg3.innerHTML = "Jogador 2 venceu"
+        }
+    }
+    /*10. Crie um programa que simule um jogo de dados, o qual:
+a) Tenha um botão "Dado Jogador 1" que faz aparecer, abaixo dele, o valor de um dadinho de 6 lados sorteado  
+
+b) Tenha um botão "Dado Jogador 2" que faz aparecer, abaixo dele, o valor de um dadinho de 6 lados sorteado  
+
+c) Tenha um botão "Comparar Resultados", que exibe uma das frases abaixo de tudo:  
+
+  "Jogador [1 ou 2] venceu", caso um deles tenha vencido  
+
+  "Empate!", em caso dos dados serem iguais */
+</script>

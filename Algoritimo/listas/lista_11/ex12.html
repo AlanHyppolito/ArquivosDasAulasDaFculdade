@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="msg()">Avaliar</button>
+    <div id="div_msg1"></div>
+    <button onclick="msg2()">Verificar Média</button>
+</body>
+</html>
+<script>
+    let numero1 = 0
+    function msg(){
+        numero1 = (Math.random() * 5).toFixed(1)
+        div_msg1.innerHTML = numero1
+        if(numero1 < 0.5){
+            div_msg1.innerHTML = "Muito Triste"
+        }else if(numero1 < 1.5){
+            div_msg1.innerHTML = "Meio Triste"
+        }else if(numero1 < 3.5){
+            div_msg1.innerHTML = "Neutro"
+        }else if(numero1 < 4.5){
+            div_msg1.innerHTML = "Feliz"
+        }else if(numero1 >= 4.5){
+            div_msg1.innerHTML = "Muito Feliz"
+        }
+
+    }
+    function msg2(){
+
+    }
+
+    /*
+    12. Faça uma versão melhorada da questão anterior:  
+a) Tenha um botão "Verificar Média" que quando clicado, mostre abaixo da última avaliação a média de todas as avaliações realizadas. Ex: "Média geral: 3.9"  
+
+b) Mostrar também o emoji de acordo com a média.  
+
+OBS: Essa média é a soma de todas as avaliações dividida pela quantidade de avaliações realizadas */
+</script>

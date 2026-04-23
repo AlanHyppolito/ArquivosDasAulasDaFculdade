@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nota:</p>
+    <input id="ipt_nota" type="text">
+    <p>Frequencia(%)</p>
+    <input type="text" id="ipt_frequencia">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    let notas = []
+
+    function cadastrar(){
+        let notas = +ipt_nota.value 
+        notas.push(nota);
+
+        let frequencia = +ipt_frequencia.values
+        frequencia.push(frequencia)
+
+        let mediaNotas = calcularMedia(nota);
+        let mediaFrequencia = calcularMedia(frequencia);
+
+        div_msg.innerHTML = ""
+        div_msg.innerHTML += `A média das notas é : ${mediaNotas.toFixed(2)}<br>`
+        div_msg.innerHTML += `A média das frequencias é : ${mediaFrequencia.toFixed(2)}<br>`
+    }
+    function calcularMedia(lista){
+        let notas = +ipt_nota.value 
+        notas.push(nota);
+
+        let soma = 0;
+        for(let i = 0; i < lista.length; i++){
+            soma+= lista[i]
+        }
+        let media = soma / lista.length;
+        return media;
+    }
+
+
+
+// return para "parar" a função.
+    function pesquisar(lista, busca){
+        for (let i = 0; i < lista.length; i++){
+            if(lista[i] == busca){
+                console.log("encontrei")
+                return i;
+            }
+        }
+        console.log("Nao encontrei")
+        return -1;
+    }
+
+</script>

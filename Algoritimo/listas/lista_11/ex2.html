@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear time</button>
+    <div id="div_msg"></div>
+    <img width="150px" src="" alt="">
+</body>
+</html>
+<script>
+    function sortear(){
+        let numero = Math.random()
+
+        if(numero >= 7.5){
+            div_msg.innerHTML = `<img width="150px" src="" alt="">`
+        }else if(numero >= 5 ){
+            div_msg.innerHTML =`<img width="150px" src="" alt="">`
+        }else if(numero >= 2.5 ){
+            div_msg.innerHTML =`<img width="150px" src="" alt="">`
+        }else{
+            div_msg.innerHTML =`<img width="150px" src="" alt="">`
+        }
+    }
+
+    /*2. Crie um programa o qual:  
+a) Ao clicar no botão "Sortear time", faz aparecer somente um dos escudos dos 4 times de futebol de maior torcida do estado de São Paulo. Independente da imagem, todas devem ter 150px de altura.  */
+</script>
