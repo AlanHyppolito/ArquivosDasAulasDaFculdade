@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome:<input type="text" id="ipt_nome"><br>
+    Idade:<input type="text" id="ipt_idade"><br>
+    Nota: <input type="text" id="ipt_nota"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <hr>
+    <button onclick="ExibirReprovados()">Reprovados</button>
+    <div id="div_reprovados"></div>
+
+
+</body>
+
+</html>
+<script>
+    let alunos = [];
+    function cadastrar() {
+        let nome = ipt_nome.value
+        let idade = Number(ipt_idade.value)
+        let nota = Number(ipt_nota.value)
+
+        aluno = {
+            "Nome": nome,
+            "Idade": idade,
+            "Nota": nota
+        }
+
+        alunos.push(aluno)
+    }
+    function ExibirReprovados() {
+
+        for (let i = 0; i < alunos.length; i++) {
+            if (alunos[i].nota < 6) {
+                div_reprovados.innerHTML += `${alunos[i]["nome"]}`
+            }
+        }
+    }
+</script>
