@@ -34,5 +34,13 @@ function adicionarNoInicio(lista, adicionar){
     return listaNew;
 }
 function alterarLista(lista, indice, quantidade, novoElemento){
-
+    let y = 0
+    let listaNew = new Array(lista.length-quantidade)
+for(){
+    if(i >= indice && i <= (indice + quantidade)){
+        continue;
+    }
+    
+    y++
+}
 }
