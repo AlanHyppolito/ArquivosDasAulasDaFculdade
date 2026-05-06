@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Playlist</h1>
+    <h3>Adicionar uma nova música à playlist</h3>
+    <input id="ipt_titulo" type="text" placeholder="Informe o Titulo"><br>
+    <input id="ipt_banda" type="text" placeholder="Informe a Banda"><br>
+    <input id="ipt_duracao" type="text" placeholder="Informe a Duração"><br>
+    <input id="ipt_anoLancamento" type="text" placeholder="Informe o ano de lancamento"><br>
+    <input id="ipt_avaliacoes" type="text" placeholder="Informe a avaliação de 1 a 5"><br>
+    <input id="ipt_integrantes" type="text" placeholder="Informe os integrantes"><br>
+    <button onclick="adicionarMusica()">Adicionar música</button>
+    <Button onclick="listarMusicas()">Mostrar Playlist</Button>
+    <div id="playlist"></div>
+    <hr>
+    <h3>Remover musica da Playlist</h3>
+    <input id="remover" type="text" placeholder="Informe a musica">
+    <button onclick="removerMusica()">Remover</button>
+    <hr>
+    <h3>Atualizar ano de lançamento</h3>
+    <input id="nome" type="text" placeholder="Informe o titulo">
+    <input id="dia" type="text" placeholder="Informe a data de lançamento">
+    <button onclick="atualizarAnoLancamento()">Atualizar</button>
+    <hr>
+    <h3>Calcular media das avaliacoes da musica</h3>
+    <input id="nomeCalculo" type="text" pl  aceholder="Informe a musica">
+    <div id="media"></div>
+    <hr>
+    <h3>De que banda é X integrante?</h3>
+    <input id="integrante" type="text" placeholder="Informe o integrante">
+    <button onclick="buscarBandaPorIntegrante()">Buscar banda</button>
+
+</body>
+
+</html>
+<script>
+    let musicas = []
+    function adicionarMusica() {
+        let titulo = ipt_titulo.value
+        let banda = ipt_banda.value
+        let duracao = ipt_duracao.value
+        let lancamento = ipt_anoLancamento.value
+        let avaliação = ipt_avaliacoes.value
+        let integrantes = ipt_integrantes.value
+        let avaliacoes = avaliação.split(",")
+        console.log(avaliacoes)
+
+        let musica = {
+            "titulo": titulo,
+            "banda": banda,
+            "duracao": duracao,
+            "anoLancamento": lancamento,
+            "avaliacoes": avaliacoes,
+            "integrantes": integrantes
+        }
+        musicas.push(musica)
+    }
+    function listarMusicas() {
+        let contador = 1
+        playlist.innerHTML = "As músicas são:<br>"
+        for (let i = 0; i < musicas.length; i++) {
+            playlist.innerHTML += `${contador} titulo: ${musicas[i].titulo} banda: ${musicas[i].banda} duracao: ${musicas[i].duracao} anoLancamento: ${musicas[i].anoLancamento} avaliacoes: ${musicas[i].avaliacoes} integrantes: ${musicas[i].integrantes}<br>`
+            contador++
+        }
+    }
+    function removerMusica() {
+        let musica = remover.value.toLowerCase()
+
+        for (let i = 0; i < musicas.length; i++) {
+            if (musicas[i].titulo.toLowerCase().includes(musica)) {
+                musicas.splice(i, 1)
+                break
+            }
+            continue
+        }
+    }
+    function atualizarAnoLancamento() {
+        let nome = nome.value
+        let dia = dia.value
+
+        for (let i = 0; i < musicas.length; i++) {
+            if (musicas[i].titulo == nome) {
+                break
+            }
+            continue
+        }
+        musicas[i].anoLancamento = dia
+    }
+    function mediaAvaliacoes() {
+        let musica = nomeCalculo.value
+        for (let i = 0; i < musicas.length; i++) {
+            if (musicas[i].titulo == musica) {
+                break
+            }
+            continue
+        }
+        let valor = 0
+        for( let a = 0; a < musicas[i].avaliacoes.length; a++){
+            valor += musicas[i].avaliacoes[a]
+        }
+        let media = valor / musicas[i].avaliacoes.length
+        media.innerHTML = media
+    }
+    function buscarBandaPorIntegrante() {
+        let integrante = integrante.value
+        for (let i = 0; i < musicas.length; i++) {
+            if (musicas[i].integrantes.includes(integrante)) {
+                break
+            }
+            continue
+        }
+        banda.innerHTML = `A banda é ${musicas[i].banda}`
+    }
+</script>
