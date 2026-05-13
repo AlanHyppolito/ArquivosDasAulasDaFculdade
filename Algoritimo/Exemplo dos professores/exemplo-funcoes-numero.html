@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    let numeros = [3, 5, 1, 4, 6]
+
+    // let exibir = (valor, indice) => {
+    //     if (valor % 2 == 0) {
+    //         console.log(indice, valor);
+    //     }
+    // }
+    // numeros.forEach(exibir)
+
+    let numerosPares = numeros.filter((valor) => {
+        return valor % 2 == 0;
+    }).forEach(valor => {
+        console.log(valor);
+    });
+
+    let parOuImpar = numeros.map((valor)=>{
+        if(valor % 2 ==0 ){
+            return "par<br>";
+        }else{
+            return "impar<br>";
+        }
+    });
+    
+    parOuImpar.forEach((valor)=>{
+        msg.innerHTML += parOuImpar
+    })
+
+    numeros.reduce((anterior, atual)=>{
+        return anterior + atual;
+    },1);
+
+    nume
+</script>

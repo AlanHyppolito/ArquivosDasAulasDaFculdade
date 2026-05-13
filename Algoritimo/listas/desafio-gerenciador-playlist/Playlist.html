@@ -16,8 +16,10 @@
     <input id="ipt_anoLancamento" type="text" placeholder="Informe o ano de lancamento"><br>
     <input id="ipt_avaliacoes" type="text" placeholder="Informe a avaliação de 1 a 5"><br>
     <input id="ipt_integrantes" type="text" placeholder="Informe os integrantes"><br>
+    <div id="addMusica"></div>
     <button onclick="adicionarMusica()">Adicionar música</button>
     <Button onclick="listarMusicas()">Mostrar Playlist</Button>
+    <p id="p"></p>
     <div id="playlist"></div>
     <hr>
     <h3>Remover musica da Playlist</h3>
@@ -27,15 +29,18 @@
     <h3>Atualizar ano de lançamento</h3>
     <input id="nome" type="text" placeholder="Informe o titulo">
     <input id="dia" type="text" placeholder="Informe a data de lançamento">
+    <div id="atualizar"></div>
     <button onclick="atualizarAnoLancamento()">Atualizar</button>
     <hr>
     <h3>Calcular media das avaliacoes da musica</h3>
-    <input id="nomeCalculo" type="text" pl  aceholder="Informe a musica">
+    <input id="nomeCalculo" type="text" placeholder="Informe a musica">
     <div id="media"></div>
+    <button onclick="mediaAvaliacoes()">Calcular media</button>
     <hr>
     <h3>De que banda é X integrante?</h3>
     <input id="integrante" type="text" placeholder="Informe o integrante">
     <button onclick="buscarBandaPorIntegrante()">Buscar banda</button>
+    <DIV id="buscarE"></DIV>
 
 </body>
 
@@ -52,6 +57,33 @@
         let avaliacoes = avaliação.split(",")
         console.log(avaliacoes)
 
+        let numero = new RegExp(0 - 9)
+
+        let valido = false
+        addMusica.innerHTML = ""
+        if (titulo != "" || banda != "" || duracao != "" || lancamento != "" || avalicoes != "" || integrantes != "") {
+            valido = true
+        } else {
+            addMusica.innerHTML += "Preencha todos os campos para adicionar a música."
+        }
+        if ((avaliacoes > 5 || avaliacoes < 1) && avaliacoes != numero) {
+            valido = false
+            addMusica.innerHTML += "Todas as avaliações devem ser números entre 1 e 5."
+        }
+        if (avaliacoes != "" || integrantes != "") {
+            addMusica.innerHTML += "Informe ao menos uma avaliação e um integrante"
+        }
+
+        for (let i = 0; i < musicas.length; i++) {
+            if (musica.titulo == titulo) {
+                valido = false
+                addMusica.innerHTML += "Já existe uma música com este título."
+                break
+            }
+        }
+
+
+
         let musica = {
             "titulo": titulo,
             "banda": banda,
@@ -60,62 +92,121 @@
             "avaliacoes": avaliacoes,
             "integrantes": integrantes
         }
-        musicas.push(musica)
+        if (valido == true) {
+            musicas.push(musica)
+        }
     }
     function listarMusicas() {
         let contador = 1
+
         playlist.innerHTML = "As músicas são:<br>"
         for (let i = 0; i < musicas.length; i++) {
             playlist.innerHTML += `${contador} titulo: ${musicas[i].titulo} banda: ${musicas[i].banda} duracao: ${musicas[i].duracao} anoLancamento: ${musicas[i].anoLancamento} avaliacoes: ${musicas[i].avaliacoes} integrantes: ${musicas[i].integrantes}<br>`
             contador++
         }
     }
+
     function removerMusica() {
         let musica = remover.value.toLowerCase()
-
-        for (let i = 0; i < musicas.length; i++) {
-            if (musicas[i].titulo.toLowerCase().includes(musica)) {
-                musicas.splice(i, 1)
-                break
+        let valido = false
+        if (titulo != "") {
+            for (let i = 0; i < musicas.length; i++) {
+                if (musica.titulo == titulo) {
+                    valido = true
+                    break
+                } else {
+                    remover.innerHTML = "Música não encontrada para remoção."
+                }
             }
-            continue
+            if (valido == true) {
+                for (let i = 0; i < musicas.length; i++) {
+                    if (musicas[i].titulo.toLowerCase().includes(musica)) {
+                        musicas.splice(i, 1)
+                        break
+                    }
+                    continue
+                }
+            }
+        } else {
+            remover.innerHTML = "Nenhuma música cadastrada."
+
         }
     }
     function atualizarAnoLancamento() {
-        let nome = nome.value
-        let dia = dia.value
-
-        for (let i = 0; i < musicas.length; i++) {
-            if (musicas[i].titulo == nome) {
-                break
+        let titulo = nome.value
+        let data = dia.value
+        let valido = false
+        if (titulo != "" && data != "") {
+            for (let a = 0; a < musicas.length; a++) {
+                if (musicas[a].titulo == titulo) {
+                    valido = true
+                    break
+                } else {
+                    atualizar.innerHTML = "Música não encontrada para atualização."
+                }
+                if (valido = true) {
+                    for (let i = 0; i < musicas.length; i++) {
+                        if (musicas[i].titulo == titulo) {
+                            break
+                        }
+                        continue
+                    }
+                    musicas[i].anoLancamento = data
+                } else {
+                    atualizar.innerHTML = "Informe o título e o novo ano."
+                }
             }
-            continue
         }
-        musicas[i].anoLancamento = dia
     }
     function mediaAvaliacoes() {
         let musica = nomeCalculo.value
-        for (let i = 0; i < musicas.length; i++) {
-            if (musicas[i].titulo == musica) {
-                break
+        let valido = false
+        if (musica != "") {
+            for (let i = 0; i < musicas.length; i++) {
+                if (musicas[i].titulo == musica) {
+                    valido = true
+                    break
+                }
+                continue
             }
-            continue
+            if (valido == true) {
+                let valor = 0
+                for (let a = 0; a < musicas[i].avaliacoes.length; a++) {
+                    valor += musicas[i].avaliacoes[a]
+                }
+                let media = valor / musicas[i].avaliacoes.length
+                media.innerHTML = media
+            } else {
+                mediaE.innerHTML += "Música não encontrada para calcular média."
+            }
+        } else {
+            mediaE.innerHTML += "Informe o título para calcular a média."
         }
-        let valor = 0
-        for( let a = 0; a < musicas[i].avaliacoes.length; a++){
-            valor += musicas[i].avaliacoes[a]
-        }
-        let media = valor / musicas[i].avaliacoes.length
-        media.innerHTML = media
     }
     function buscarBandaPorIntegrante() {
         let integrante = integrante.value
-        for (let i = 0; i < musicas.length; i++) {
-            if (musicas[i].integrantes.includes(integrante)) {
-                break
+        let valido = false
+        if (integrante != "") {
+            for (let i = 0; i < musicas.length; i++) {
+                if (musicas[i].integrante == integrante) {
+                    valido = true
+                    break
+                }
+                continue
             }
-            continue
+            if (valido == true) {
+                for (let i = 0; i < musicas.length; i++) {
+                    if (musicas[i].integrantes.includes(integrante)) {
+                        break
+                    }
+                    continue
+                }
+                banda.innerHTML = `A} banda é ${musicas[i].banda}`
+            } else {
+                buscarE.innerHTML = "Informe o integrante para buscar a banda."
+            }
+        } else {
+            buscarE.innerHTML = "Integrante não encontrado nas bandas cadastradas."
         }
-        banda.innerHTML = `A banda é ${musicas[i].banda}`
     }
 </script>
