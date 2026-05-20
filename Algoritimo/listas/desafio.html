@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://api.thecatapi.com/v1/images/search"></script>
+</head>
+
+<body>
+    <H1>Gato aleatorio</H1>
+    <hr>
+    <button onclick="img()"></button><br><br><br>
+    <div id="img_gatinho">Ver gatinhos</div>
+
+</body>
+
+</html>
+<script>
+    let array = []
+    function img() {
+        for (let i = 0; i < 8; i++) {
+            fetch("https://api.thecatapi.com/v1/images/search").then((resposta) => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta2) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta2)}`)
+                        array.push(resposta2[0].url)
+                    }
+                    )
+                } else {
+                    console.log("Deu erro")
+                }
+            })
+        } setTimeout(() => {
+            for (let a = 0; a < 8; a++) {
+                img_gatinho.innerHTML += `<img style="width:300px; height:300px" src="${array[a]}" alt="">`
+            }
+        },2000)
+    }
+</script>
