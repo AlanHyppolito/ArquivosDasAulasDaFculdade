@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="div_produto"></div>
+    <button onclick="produtoCarrinho()">Produto no carrinho</button>
 </body>
+
 </html>
 <script>
-    produtoCarrinho()
+    function produtoCarrinho() {
+    let produto = {
+        "nome": "Caderno",
+        "preco": 15,
+        "quantidade": 3
+    }
+    div_produto.innerHTML = `Produto: ${produto.nome} 
+    | Preço: R$${produto.preco} 
+    | Quantidade: ${produto.quantidade} 
+    | Total: R$ ${(produto.nome * produto.preco)}`
+}
 </script>
