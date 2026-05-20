@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // exemplo de hashmap
+
+    let alunos = [{
+        "ra": "1",
+        "nome": "alan",
+        "idade": "18"
+    },
+    {
+        "ra": "2",
+        "nome": "luiz",
+        "idade": "18"
+    },
+    {
+        "ra": "3",
+        "nome": "Mayumi",
+        "idade": "18"
+    }
+    ]
+
+    let alunosMap = {
+        "1": {
+            "nome": "alan",
+            "idade": "18"
+        },
+        "2": {
+            "nome": "luiz",
+            "idade": "18"
+        },
+        "3": {
+            "nome": "Mayumi",
+            "idade": "18"
+        }
+    }
+
+
+    let novoRa = "734";
+    let novoNome = "jubileu";
+    let novaIdade = "23";
+
+    alunosMap[novoRa] = {
+        "nome": novoNome,
+        "idade": novaIdade
+    }
+
+    function buscarPorRa(ra) {
+        if (!(ra in alunosMap)) {
+            return "Aluno não encontrado"
+        }
+
+    }
+
+    function remover(ra) {
+        delete alunosMap[ra]
+    }
+
+    function listarAlunos() {
+        let chaves = Object.keys(alunosMap)
+        console.log(chaves);
+    }
+
+    function listarChaves() {
+        for (let i = 0; i < chaves.length; i++) {
+            console.log(alunosMap[chaves[i]])
+        }
+    }
+    let hashmap = new Map()
+</script>
