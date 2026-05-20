@@ -62,7 +62,7 @@ function atulizandoPropriedadeSacar(valor) {
         "saldo": 1550.75,
         "banco": "Banco Central do Brasil"
     }
-    return`Titular: ${conta.titular} 
+    return `Titular: ${conta.titular} 
     Saldo: ${conta.saldo - valor} 
     Banco: ${conta.banco}`
 }

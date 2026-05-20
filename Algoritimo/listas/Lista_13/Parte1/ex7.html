@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Pesquisar produto</h3>
+    <input type="text" id="ipt_tipo">
+    <button onclick="filtroProdutos()">Verificar</button>
+    <div id="div_produto"></div>
+</body>
+</html>
+<script>
+    function filtroProdutos() {
+    let tipo = ipt_tipo.value
+
+    let produtos = [produto1, produto2, produto3, produto4, produto5, produto6]
+
+    let produto1 = {
+        "nome": "Monitor 24 Polegadas",
+        "categoria": "Eletrônicos",
+        "preco": 850.00
+    };
+
+    let produto2 = {
+        "nome": "Teclado Mecânico",
+        "categoria": "Eletrônicos",
+        "preco": 250.00
+    };
+
+    let produto3 = {
+        "nome": "Pacote de Café 500g",
+        "categoria": "Alimentos",
+        "preco": 22.90
+    };
+
+    let produto4 = {
+        "nome": "Caixa de Leite",
+        "categoria": "Alimentos",
+        "preco": 5.50
+    };
+
+    let produto5 = {
+        "nome": "Caderno Universitário",
+        "categoria": "Escritório",
+        "preco": 35.00
+    };
+
+    let produto6 = {
+        "nome": "Kit de Canetas",
+        "categoria": "Escritório",
+        "preco": 15.00
+    };
+    for (let i = 0; i < produtos.length; i++) {
+        if (produtos[i].categoria == tipo) {
+            div_produto.innerHTML = `Nome: ${produtos[i].nome} Categoria: ${produtos[i].categoria} Preço: ${produtos[i].preco}`
+        }
+        continue
+    }
+
+
+}
+</script>

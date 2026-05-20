@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_media"></div>
+</body>
+</html>
+<script>
+    function mediaTurma() {
+
+    let alunos = [aluno1, aluno2, aluno3, aluno4, aluno5]
+
+    let aluno1 = {
+        "nome": "Alice Moreira",
+        "nota": 8.5
+    };
+
+    let aluno2 = {
+        "nome": "Gabriel Lima",
+        "nota": 7.0
+    };
+
+    let aluno3 = {
+        "nome": "Beatriz Rocha",
+        "nota": 9.2
+    };
+
+    let aluno4 = {
+        "nome": "Tiago Ferreira",
+        "nota": 6.8
+    };
+
+    let aluno5 = {
+        "nome": "Helena Souza",
+        "nota": 10.0
+    };
+
+    let notas = 0
+
+    for (let i = 0; i < alunos.length; i++) {
+        notas += alunos[i].nota
+    }
+
+    div_media.innerHTML = `A media da turma é ${(notas/alunos.length).toFixed(1)}` 
+}
+</script>

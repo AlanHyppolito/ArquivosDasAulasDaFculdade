@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="div_aluno"></div>
+    <button onclick="fichaAluno()">Ficha do Aluno</button>
 </body>
+
 </html>
 <script>
-    fichaAluno()
-    div_aluno.inner
+    function fichaAluno() {
+    let aluno = {
+        "nome": "Ana Silva",
+        "ra": 1234567,
+        "curso": "Ciência da Computação",
+        "semestre": 1
+    }
+    div_aluno.innerHTML = `Nome: ${aluno.nome}<br>
+RA: ${aluno.ra}<br>
+Curso: ${aluno.curso}<br>
+Semestre: ${aluno.semestre}`
+}
 </script>

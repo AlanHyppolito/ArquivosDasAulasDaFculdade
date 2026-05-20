@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_contatos"></div>
+    <button onclick="listaContatos()"></button>
+</body>
+</html>
+<script>
+    function listaContatos() {
+    let contatos = [cantato1, contato2, contato3, contato4]
+    div_contatos.innerHTML = ``
+    let contato1 = {
+        "nome": "Ana Oliveira",
+        "telefone": "(11) 98765-4321"
+    };
+
+    let contato2 = {
+        "nome": "Bruno Costa",
+        "telefone": "(21) 91234-5678"
+    };
+
+    let contato3 = {
+        "nome": "Carla Mendes",
+        "telefone": "(31) 99887-7665"
+    };
+
+    let contato4 = {
+        "nome": "Diego Santos",
+        "telefone": "(47) 98822-1100"
+    };
+    for (let i = 0; i < contatos.length; i++) {
+        div_contatos.innerHTML += `Nome: ${contatos[i].nome} Telefone: ${contatos[i].telefone} `
+    }
+}
+</script>

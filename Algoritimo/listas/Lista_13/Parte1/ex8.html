@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="div_produto"></div>
+
+</body>
+
+</html>
+<script>
+    function cardapioRestaurante() {
+        div_produto.innerHTML = ""
+        let pratos = [prato1, prato2, prato3, prato4, prato5]
+
+        let prato1 = {
+            "nome": "Bruschetta de Tomate",
+            "tipo": "entrada",
+            "preco": 25.00
+        };
+
+        let prato2 = {
+            "nome": "Risoto de Alho Poró",
+            "tipo": "principal",
+            "preco": 58.90
+        };
+
+        let prato3 = {
+            "nome": "Petit Gâteau com Sorvete",
+            "tipo": "sobremesa",
+            "preco": 32.00
+        };
+
+        let prato4 = {
+            "nome": "Salada Caesar",
+            "tipo": "entrada",
+            "preco": 28.50
+        };
+
+        let prato5 = {
+            "nome": "Filé Mignon ao Molho Madeira",
+            "tipo": "principal",
+            "preco": 74.00
+        };
+        for (let i = 0; i < produtos.length; i++) {
+            if (produtos[i].tipo == "entrada") {
+                div_produto.innerHTML += `Nome: ${pratos[i].nome} Categoria: ${pratos[i].tipo} Preço: ${pratos[i].preco}`
+            }
+        }
+        for (let a = 0; a < produtos.length; a++) {
+            if (produtos[i].tipo == "principal") {
+                div_produto.innerHTML += `Nome: ${pratos[i].nome} Categoria: ${pratos[i].tipo} Preço: ${pratos[i].preco}`
+            }
+        }
+        for (let b = 0; b < produtos.length; b++) {
+            if (produtos[i].tipo == "sobremesa") {
+                div_produto.innerHTML += `Nome: ${pratos[i].nome} Categoria: ${pratos[i].tipo} Preço: ${pratos[i].preco}`
+            }
+        }
+    }
+</script>
