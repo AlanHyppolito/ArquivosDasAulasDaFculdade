@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: antiquewhite;">
+    
+    <br>
+    Nome da Rua/Avenida/Vila: <input type="text" id="NomeDaRuaAvenidaVila">
+    <br>
+    Numero da casa: <input type="text" id="casa">
+    <br>
+    <button onclick="mensagem()">onde eu moro</button>
+</body>
+</html>
+<script>
+    function mensagem(){
+        alert ("Seu logradouro é"+NomeDaRuaAvenidaVila.value)
+        alert ("O numero do seu logradouro é"+casa.value)
+    }
+</script>
