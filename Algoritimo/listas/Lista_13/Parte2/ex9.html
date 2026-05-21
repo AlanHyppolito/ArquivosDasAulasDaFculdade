@@ -8,26 +8,41 @@
 </head>
 
 <body>
-    <input type="text" id="ipt_dia" placeholder="Informe o dia" oninput="traduzir()">
+    <input type="text" id="ipt_dia" placeholder="Informe o dia">
+    <button onclick="traduzir()">traduzir</button>
+    <div id="dia"></div>
 </body>
 
 </html>
 <script>
-    const dias = {
-        "monday": "Segunda-feira",
-        "tuesday": "Terça-feira",
-        "Wednesday": "Quarta-feira",
-        "Thursday": "Quinta-feira",
-        "Friday": "Sexta-feira",
-        "Saturday": "Sabado",
-        "Sunday": "Domingo"
-    };
+    let diasMap = {
+        "monday": {
+            "dia": "Segunda-feira"
+        },
+        "tuesday": {
+            "dia": "Terça-feira"
+        },
+        "Wednesday": {
+            "dia": "Quarta-feira"
+        },
+        "Thursday": {
+            "dia": "Quinta-feira"
+        },
+        "Friday": {
+            "dia": "Sexta-feira"
+        },
+        "Saturday": {
+            "dia": "Sabado"
+        },
+        "Sunday": {
+            "dia": "Domingo"
+        }
+    }
 
     function traduzir() {
-        let dia = ipt_dia.value
+        let day = ipt_dia.value
 
-
-
+        dia.innerHTML = diasMap[day].dia
 
     }
 </script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="ipt">
+    <button onclick="fun()">Adicionar </button><button onclick="valor()">Fechar Pedido</button>
+    <div id="div_pedidos"></div>
+</body>
+
+</html>
+<script>
+    const cardapio = {
+        "HAM": { nome: "Hambúrguer Clássico", preco: 25.90 },
+        "ACA": { nome: "Açaí 500ml", preco: 18.00 },
+        "FEI": { nome: "Feijoada", preco: 32.00 },
+        "PLM": { nome: "Palheta Mexicana", preco: 9.00 },
+        "CAR": { nome: "Carne", preco: 35.00 }
+    };
+    let array = []
+    function fun() {
+        let cod = ipt.value
+        array.push(cod)
+        div_pedidos.innerHTML = `Lista : ${array}`
+
+    }
+    function valor(){
+        let cont = 0
+        for(let i = 0; i < array.length; i++){
+            cont + cardapio[arrai[i]].preco
+        }
+        div_pedidos.innerHTML = `Valor a pagar ${cont}`
+    }
+</script>

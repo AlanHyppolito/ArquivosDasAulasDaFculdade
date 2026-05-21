@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="valor" type="text">
+    <select name="" id="select">
+        <option value="estudante">estudante</option>
+        <option value="idoso">idoso</option>
+        <option value="professor">professor</option>
+        <option value="comum">comum</option>
+    </select>
+    <button onclick="calcular()"></button>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    const descontos = {
+        "estudante": 0.20,
+        "idoso": 0.15,
+        "professor": 0.10,
+        "comum": 0.00
+    };
+
+    function calcular(){
+        let sel = select.value
+        let preco = valor.value
+
+        msg.innerHTML = `O valor a ser pago é de R$ ${preco * sel}`
+    }
+</script>
